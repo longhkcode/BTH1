@@ -1,0 +1,4 @@
+So luong so hoan hao nho hon 10 la: 1
+So luong so hoan hao nho hon 100 la: 2
+So luong so hoan hao nho hon 1000 la: 3
+So luong so hoan hao nho hon 10000 la: 4

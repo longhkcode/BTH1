@@ -4,9 +4,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.io.PrintWriter;
 public class Main {
   public static void main(String[] args) {
     File file = new File("src/BTH1/input.txt");
+    File outputFile = new File("src/BTH1/output.txt");
     ArrayList<Integer> ar = new ArrayList<>();
 
     try (Scanner scanner = new Scanner(file)) {
@@ -17,10 +19,14 @@ public class Main {
       System.out.println("Khong tim thay file");
       return;
     }
-    for (int n : ar)
-    {
-      int count = countPerfectNumber(n);
-      System.out.println("so luong so hoan hao la : " + count);
+
+    try (PrintWriter writer = new PrintWriter(outputFile)) {
+      for (int n : ar) {
+        int count = countPerfectNumber(n);
+        writer.println("So luong so hoan hao nho hon " + n + " la: " + count);
+      }
+    } catch (FileNotFoundException e) {
+      System.out.println("Khong ghi duoc file output");
     }
   }
 
